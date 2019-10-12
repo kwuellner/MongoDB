@@ -1,0 +1,54 @@
+<nav class="navbar sticky-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Music News</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Saved</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="articles">
+    <div class="load"></div>
+    {{#each articles}}
+    {{#unless saved}}
+    <div class="article">
+        <img src="{{image}}" style="height:150px;">
+        <a href="{{link}}">
+            <h1>{{title}}</h1>
+        </a>
+        <p>{{summary}}</p>
+        <button type="button" class="btn btn-outline-warning" data-id="{{_id}}">DELETE</button>
+        <button type="button" class="btn btn-outline-warning" data-id="{{_id}}">ADD COMMENT</button>
+        <br>
+        <br>
+    </div>
+    {{/unless}}
+    {{/each}}
+</div>
+
+{{!-- displaying/creating notes --}}
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Comment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
