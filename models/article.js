@@ -40,4 +40,4 @@ let SchemaArticle = new Schema({
 // creating model from above schema
 let article = mongoose.model("Article", SchemaArticle);
 
-modeule.exports = article;
+module.exports = article;
