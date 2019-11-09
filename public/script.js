@@ -1,7 +1,7 @@
 // scrape
 $(document).on("click", ".scrape", function () {
     $.get("/scrape", function (req, res) {
-        console.log(req);
+        console.log(res);
     }).then(function (data) {
         window.location.href = "/";
     });
@@ -16,7 +16,7 @@ $(document).on("click", ".home", function () {
 });
 
 // save
-$(document).on("click", ".save", function (e) {
+$(document).on("click", ".save", function () {
     $(this).parent().remove();
     let artId = $(this).attr("data-id");
     $.ajax({
@@ -66,7 +66,7 @@ $(document).on("click", '#savenote', function () {
         $("#notes").empty();
     });
 
-    $("#titelinput").val("");
+    $("#titleinput").val("");
     $("#bodyinput").val("");
     $("#noteModal").modal("hide");
 });

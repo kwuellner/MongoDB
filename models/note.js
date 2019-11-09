@@ -10,7 +10,7 @@ let SchemaNote = new Schema({
 });
 
 //creating our model from the schema
-let note = mongoose.model("Note", SchemaNote);
+let Note = mongoose.model("Note", SchemaNote);
 
-module.exports = note;
+module.exports = Note;
 

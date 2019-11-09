@@ -30,7 +30,7 @@ let SchemaArticle = new Schema({
     },
 
     // note stores the note id 
-    // this allows us to populae the article with the note associated to it
+    // this allows us to populate the article with the note associated to it
     note: {
         type: Schema.Types.ObjectId,
         ref: "note"
@@ -38,6 +38,6 @@ let SchemaArticle = new Schema({
 });
 
 // creating model from above schema
-let article = mongoose.model("Article", SchemaArticle);
+let Article = mongoose.model("Article", SchemaArticle);
 
-module.exports = article;
+module.exports = Article;
