@@ -5,17 +5,18 @@ let mongoose = require("mongoose");
 let exphbs = require("express-handlebars");
 
 //port
-let PORT = process.env.PORT || 27017;
+let PORT = process.env.PORT || 3000;
 
 //app express
 let app = express();
 
 //Connection
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-// mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI);
 
-// mongoose.connect("mongodb://localhost:27017/WiredTiger", { useNewUrlParser: true });
+
+
 
 // scrapping tools
 let axios = require("axios");
